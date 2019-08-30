@@ -13,7 +13,7 @@ echo "Installing other...."
 yum -y install firefox gedit filezilla zip unzip nano htop ncdu \
 gcc gcc-c++ zlib zlib-devel libffi-devel openssl-devel bzip2-devel \
 thunderbird wget dig mlocate bind-utils rdesktop freerdp tigervnc-server \
-git xclip
+git xclip screen
 
 echo "Installing Chrome..."
 touch /etc/yum.repos.d/google-chrome.repo
@@ -37,6 +37,19 @@ gpgcheck=0
 repo_gpgcheck=1
 gpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo
 yum -y install atom
+
+
+echo "Installing VScode..."
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+touch /etc/yum.repos.d/vscode.repo
+echo "[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo
+yum -y install code
+
 
 echo "Installing Python..."
 cd /usr/src
