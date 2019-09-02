@@ -13,7 +13,7 @@ echo "Installing other...."
 yum -y install firefox gedit filezilla zip unzip nano htop ncdu \
 gcc gcc-c++ zlib zlib-devel libffi-devel openssl-devel bzip2-devel \
 thunderbird wget dig mlocate bind-utils rdesktop freerdp tigervnc-server \
-git xclip screen
+git xclip screen docker
 
 echo "Installing Chrome..."
 touch /etc/yum.repos.d/google-chrome.repo
